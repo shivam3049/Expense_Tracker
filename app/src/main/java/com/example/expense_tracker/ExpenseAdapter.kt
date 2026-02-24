@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.expense_tracker.databinding.ExpenseItemBinding
 
-// FIX: Constructor mein click listener add kiya gaya hai
 class ExpenseAdapter(private val onItemClick: (ExpenseEntity) -> Unit) :
     ListAdapter<ExpenseEntity, ExpenseAdapter.ExpenseViewHolder>(DiffCallback) {
 
@@ -29,7 +28,6 @@ class ExpenseAdapter(private val onItemClick: (ExpenseEntity) -> Unit) :
         val expense = getItem(position)
 
         holder.binding.apply {
-            // Click handle karne ke liye logic
             root.setOnClickListener { onItemClick(expense) }
 
             val fullText = expense.category
@@ -44,7 +42,6 @@ class ExpenseAdapter(private val onItemClick: (ExpenseEntity) -> Unit) :
                 tvCategory.text = fullText
             }
 
-            // Wallet/Timeline view mein date hide rahegi
             tvDate.visibility = View.VISIBLE
             tvAmount.text = if (expense.isDebit) "- ₹${expense.amount}" else "+ ₹${expense.amount}"
             tvAmount.setTextColor(if (expense.isDebit) Color.RED else Color.parseColor("#4CAF50"))

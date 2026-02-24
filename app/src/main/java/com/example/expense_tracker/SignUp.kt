@@ -129,7 +129,7 @@ class SignupActivity : AppCompatActivity() {
             Toast.makeText(this, "Password must match", Toast.LENGTH_SHORT).show()
             return
         }
-        showLoader() // Manual registration ke liye bhi loader dikha ne ke liye
+        showLoader()
 
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
             if (task.isSuccessful) {

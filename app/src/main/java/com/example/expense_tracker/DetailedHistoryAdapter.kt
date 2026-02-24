@@ -27,7 +27,6 @@ class DetailedHistoryAdapter : ListAdapter<ExpenseEntity, DetailedHistoryAdapter
             // Category Name
             tvCategory.text = expense.category
 
-            // --- TIME AUR DATE SET KARNA ---
             tvDate.visibility = View.VISIBLE // Yahan hum date ko dikhayenge
 
             val sdfDate = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
@@ -35,7 +34,6 @@ class DetailedHistoryAdapter : ListAdapter<ExpenseEntity, DetailedHistoryAdapter
             val dateStr = sdfDate.format(Date(expense.date))
             val timeStr = sdfTime.format(Date(expense.date))
 
-            // Text ko "21 Feb 2026 | 10:30 AM" format mein dikhayenge
             tvDate.text = "$dateStr | $timeStr"
             tvDate.setTextColor(Color.GRAY)
 

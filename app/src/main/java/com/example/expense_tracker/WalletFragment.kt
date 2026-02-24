@@ -28,7 +28,6 @@ class WalletFragment : Fragment(R.layout.fragment_wallet) {
         binding = FragmentWalletBinding.bind(view)
         database = ExpenseDatabase.getDatabase(requireContext())
 
-        // FIX: Adapter initialize karte waqt click listener pass kiya
         expenseAdapter = ExpenseAdapter { selectedExpense ->
             val intent = Intent(requireContext(), TransactionDetailActivity::class.java)
 

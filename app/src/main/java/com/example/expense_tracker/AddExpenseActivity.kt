@@ -19,7 +19,6 @@ class AddExpenseActivity : AppCompatActivity() {
         binding = ActivityAddExpenseBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Database initialize karein
         database = ExpenseDatabase.getDatabase(this)
 
         binding.btnSaveExpense.setOnClickListener {
@@ -39,7 +38,7 @@ class AddExpenseActivity : AppCompatActivity() {
                     amount = amount,
                     category = category,
                     date = System.currentTimeMillis(),
-                    isDebit = true // <--- YE LINE ADD KARNA ZAROORI HAI
+                    isDebit = true
                 )
 
                 database.expenseDao().insertExpense(newExpense)

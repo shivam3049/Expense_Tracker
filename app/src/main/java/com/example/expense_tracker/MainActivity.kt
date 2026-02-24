@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
             replaceFragment(TimelineFragment())
         }
 
-        // 2. Bottom Navigation Click Handler
+
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_timeline -> replaceFragment(TimelineFragment())
@@ -31,14 +31,14 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
-        // Aapka purana screen lock logic
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
             setShowWhenLocked(true)
             setTurnScreenOn(true)
         }
     }
 
-    // Fragment badalne ka function
+
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)

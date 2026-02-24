@@ -30,7 +30,6 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         database = ExpenseDatabase.getDatabase(requireContext())
 
-        // FIX: onItemClick pass kiya gaya hai (same logic)
         historyAdapter = ExpenseAdapter { expense ->
             val intent = Intent(requireContext(), TransactionDetailActivity::class.java)
             intent.putExtra("CATEGORY_NAME", expense.category)
