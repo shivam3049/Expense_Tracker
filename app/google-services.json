@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "215867355846",
+    "project_id": "fir-login-26f56",
+    "storage_bucket": "fir-login-26f56.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:215867355846:android:d99f0c93536d23affc9dc7",
+        "android_client_info": {
+          "package_name": "com.example.expense_tracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "215867355846-iterj9r6g7squsfepvaf73agar4r8lr7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.expense_tracker",
+            "certificate_hash": "728181e9e544be2b8268408ed5225f1ad4b86de7"
+          }
+        },
+        {
+          "client_id": "215867355846-qhu1amh0fav22jlkasgjoorvfqm8qavt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoFlptA9PSql9FUfm3OVQcPlH5XcMLNoc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "215867355846-qhu1amh0fav22jlkasgjoorvfqm8qavt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
