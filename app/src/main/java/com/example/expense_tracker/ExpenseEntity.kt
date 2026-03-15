@@ -6,8 +6,8 @@ import androidx.room.PrimaryKey
 data class ExpenseEntity(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val category: String,
-    val amount: Int,       // Agar ye Int hai toh SMS mein .toInt() lagana hoga
-    val note: String="",     // SMSReceiver mein 'note' pass karna zaroori hai
-    val isDebit: Boolean=true, // SMSReceiver mein 'isDebit' pass karna zaroori hai
+    val amount: Int,
+    val note: String="",
+    val isDebit: Boolean=true,
     val date: Long
 )

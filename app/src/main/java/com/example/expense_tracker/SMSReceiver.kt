@@ -27,7 +27,7 @@ class SMSReceiver : BroadcastReceiver() {
                     if (amountDouble > 0) {
                         val amount = amountDouble.toInt()
 
-                        // Naam nikalne ka logic: ab uppercase aur lowercase dono dhoondega
+
                         val nameRegex = if (isDebit) {
                             Regex("(?i)(?:to|vpa|at|transfer to)\\s+([A-Za-z0-9\\s*]{3,25})")
                         } else {
@@ -36,29 +36,25 @@ class SMSReceiver : BroadcastReceiver() {
 
                         val rawName = nameRegex.find(body)?.groupValues?.get(1)?.trim() ?: "Online Transaction"
 
-                        // "Other" ki jagah ab rawName jayega
-                        // ... baki code same rahega ...
 
-// 3. Category/Name decide karein
+
+
                         val displayName = if (isCredit) {
-                            // Agar paisa aaya hai, toh 'from' ya 'by' ke baad wala naam nikalein
                             val senderName = Regex("(?i)(?:from|by|sender|transfer by)\\s+([A-Za-z0-9\\s*]{3,25})")
                                 .find(body)?.groupValues?.get(1)?.trim() ?: "Income/Received"
                             senderName
                         } else {
-                            // Agar paisa gaya hai, toh purana rawName (Jo 'to' ya 'vpa' se nikala tha)
                             rawName
                         }
 
                         val expense = ExpenseEntity(
-                            category = displayName, // Ab yahan "Income" ki jagah sender ka naam aayega
+                            category = displayName,
                             amount = amount,
                             note = "SMS: $rawName",
                             isDebit = isDebit,
                             date = System.currentTimeMillis()
                         )
 
-// ... baki database save wala code same rahega ...
 
                         val database = ExpenseDatabase.getDatabase(context)
                         CoroutineScope(Dispatchers.IO).launch {

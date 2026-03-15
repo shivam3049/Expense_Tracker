@@ -24,10 +24,10 @@ class DetailedHistoryAdapter : ListAdapter<ExpenseEntity, DetailedHistoryAdapter
         val expense = getItem(position)
 
         holder.binding.apply {
-            // Category Name
+
             tvCategory.text = expense.category
 
-            tvDate.visibility = View.VISIBLE // Yahan hum date ko dikhayenge
+            tvDate.visibility = View.VISIBLE
 
             val sdfDate = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
             val sdfTime = SimpleDateFormat("hh:mm a", Locale.getDefault())
@@ -37,7 +37,6 @@ class DetailedHistoryAdapter : ListAdapter<ExpenseEntity, DetailedHistoryAdapter
             tvDate.text = "$dateStr | $timeStr"
             tvDate.setTextColor(Color.GRAY)
 
-            // Amount logic
             val amountText = if (expense.isDebit) "- ₹${expense.amount}" else "+ ₹${expense.amount}"
             tvAmount.text = amountText
             tvAmount.setTextColor(if (expense.isDebit) Color.RED else Color.parseColor("#4CAF50"))

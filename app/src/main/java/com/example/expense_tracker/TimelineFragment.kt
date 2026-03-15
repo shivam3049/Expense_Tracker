@@ -53,7 +53,6 @@ class TimelineFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        // FIX: onItemClick pass kiya gaya hai
         adapter = ExpenseAdapter { expense ->
 
         }

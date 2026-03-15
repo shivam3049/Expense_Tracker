@@ -31,7 +31,6 @@ class WalletFragment : Fragment(R.layout.fragment_wallet) {
         expenseAdapter = ExpenseAdapter { selectedExpense ->
             val intent = Intent(requireContext(), TransactionDetailActivity::class.java)
 
-            // Category name se brackets "(count)" hatane ke liye split kiya
             val cleanCategory = if (selectedExpense.category.contains(" (")) {
                 selectedExpense.category.substringBefore(" (")
             } else {

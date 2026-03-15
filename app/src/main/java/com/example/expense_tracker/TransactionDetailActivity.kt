@@ -16,21 +16,18 @@ class TransactionDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // View Binding setup
         binding = ActivityTransactionDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         database = ExpenseDatabase.getDatabase(this)
         val categoryName = intent.getStringExtra("CATEGORY_NAME") ?: ""
 
-        // Adapter Setup
         detailAdapter = DetailedHistoryAdapter()
         binding.rvDetails.apply {
             adapter = detailAdapter
             layoutManager = LinearLayoutManager(this@TransactionDetailActivity)
         }
 
-        // Data Load karna
         lifecycleScope.launch {
             database.expenseDao().getAllExpenses().collect { list ->
                 val filteredList = list.filter { it.category == categoryName }

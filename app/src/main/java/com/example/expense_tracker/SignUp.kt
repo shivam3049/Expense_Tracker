@@ -54,7 +54,7 @@ class SignupActivity : AppCompatActivity() {
                     val account = task.getResult(ApiException::class.java)!!
                     firebaseAuthWithGoogle(account.idToken!!)
                 } catch (e: ApiException) {
-                    hideLoader() // ERROR: Hide loader
+                    hideLoader()
                     Toast.makeText(this, "Google Sign-In Failed: ${e.message}", Toast.LENGTH_SHORT).show()
                 }
             } else {
@@ -103,7 +103,7 @@ class SignupActivity : AppCompatActivity() {
                         Toast.makeText(this, "Firestore Error: ${it.message}", Toast.LENGTH_SHORT).show()
                     }
             } else {
-                hideLoader() // FAILED: Hide loader
+                hideLoader()
                 Toast.makeText(this, "Authentication Failed", Toast.LENGTH_SHORT).show()
             }
         }
