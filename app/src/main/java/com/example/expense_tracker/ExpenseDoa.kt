@@ -1,7 +1,7 @@
 package com.example.expense_tracker
 
 import androidx.room.*
-import kotlinx.coroutines.flow.Flow // Ye import zaroori hai
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface ExpenseDao {

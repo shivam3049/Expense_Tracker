@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.example.expense_tracker.databinding.ActivityAddExpenseBinding // Check karein aapka binding name sahi hai
+import com.example.expense_tracker.databinding.ActivityAddExpenseBinding
 import kotlinx.coroutines.launch
 import java.util.*
 
