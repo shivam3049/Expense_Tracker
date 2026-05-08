@@ -76,8 +76,6 @@ class LoginActivity : AppCompatActivity() {
             val signInIntent = googleSignInClient.signInIntent
             googleSignInLauncher.launch(signInIntent)
         }
-
-        // Go to Signup
         binding.signUpbutton.setOnClickListener {
             startActivity(Intent(this, SignupActivity::class.java))
             finish()
