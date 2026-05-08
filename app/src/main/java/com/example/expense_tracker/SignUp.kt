@@ -38,7 +38,6 @@ class SignupActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
 
-        // Google Sign In Setup
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.my_web_client_id))
             .requestEmail()
@@ -93,7 +92,7 @@ class SignupActivity : AppCompatActivity() {
 
                 db.collection("users").document(user!!.uid).set(userMap)
                     .addOnSuccessListener {
-                        hideLoader() // SUCCESS: Hide loader
+                        hideLoader()
                         Toast.makeText(this, "Google Sign-Up Successful", Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this, MainActivity::class.java))
                         finish()
